@@ -16,7 +16,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +24,60 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+ /**
+* Extend the react-native-web reset:
+* https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js
+*/
+html,
+body,
+#root {
+  width: 100%;
+  /* To smooth any scrolling behavior */
+  -webkit-overflow-scrolling: touch;
+  margin: 0px;
+  padding: 0px;
+  /* Allows content to fill the viewport and go beyond the bottom */
+  min-height: 100%;
+  outline-style: 'none'
+}
+
+#root {
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-grow: 1;
+  display: flex;
+  flex: 1;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: scrollbar;
+}
+
+#loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* top: 0; */
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  transition: opacity 3s;
+  
+  display: flex;
+  flex-direction: column;
 }
